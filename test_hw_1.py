@@ -42,10 +42,8 @@ def test_circle():
 
 def test_random_list():
 
-    l = []
-
-    for i in range(10):
-        l+= str(random.randint(1, 100)).split()
+    l = [random.randint(1, 100) for _ in range(10)]
+    l.sort()
 
     assert len(l) == 10
     assert all(l[i] <= l[i + 1] for i in range(len(l) - 1))
@@ -55,9 +53,14 @@ def test_unique_elements():
 
     l = [1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]
 
+    unique_l = sorted(set(l))  # Гарантируем порядок
     assert isinstance(l, list)
-    assert len(l) == 10
-    assert list(set(l)) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    assert len(unique_l) == 10
+    assert unique_l == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+    #assert isinstance(l, list)
+    #assert len(l) == 10
+    #assert list(set(l)) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
 
 def test_dicts():
