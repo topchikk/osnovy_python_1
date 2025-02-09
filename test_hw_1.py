@@ -53,15 +53,10 @@ def test_unique_elements():
 
     l = [1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 8, 9, 10, 10]
 
-    unique_l = sorted(set(l))  # Гарантируем порядок
+    unique_l = sorted(set(l))
     assert isinstance(l, list)
     assert len(unique_l) == 10
     assert unique_l == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-    #assert isinstance(l, list)
-    #assert len(l) == 10
-    #assert list(set(l)) == [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
 
 def test_dicts():
 
